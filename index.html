@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WNC Bloom · spring color planner for the North Carolina mountains</title>
+<meta name="description" content="Scrub through spring and watch which flowering trees and shrubs are in bloom in Western North Carolina. Preset arrangements, elevation adjustment, and a garden builder.">
+<meta property="og:title" content="WNC Bloom">
+<meta property="og:description" content="Spring bloom succession planner for the mountains west of Asheville.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>WNC Bloom</h1>
+    <p class="lede">Spring bloom succession for the mountains west of Asheville. Pick an arrangement or build your own, set your elevation, then drag the date and watch what flowers.</p>
+  </header>
+
+  <div class="tabs" id="tabs" role="group" aria-label="Arrangement"></div>
+  <p class="about" id="about"></p>
+
+
+  <div class="scene" id="scene"></div>
+
+  <div class="scrub">
+    <div class="scrub-head">
+      <div class="date"><span id="dateText">March 1</span><small id="bloomCount"></small></div>
+      <div class="controls">
+        <button id="play" type="button">Play</button>
+        <button id="reset" type="button">Back to March</button>
+      </div>
+    </div>
+    <input id="day" type="range" min="0" max="121" value="0" step="1" aria-label="Date, March 1 through June 30">
+    <div class="ticks" id="ticks"></div>
+    <label class="elev">
+      <span>Elevation <output id="elevText"></output></span>
+      <input id="elev" type="range" step="100" aria-label="Elevation in feet">
+    </label>
+  </div>
+
+  <section class="builder" id="builder" hidden>
+    <div class="builder-head">
+      <strong>Your garden</strong>
+      <span class="muted" id="builderCount"></span>
+      <button type="button" class="small" id="builderClear">Clear</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <div class="ledger" id="ledger"></div>
+  <p class="foot" id="foot"></p>
+  <footer class="credits">Windows are approximate and shift with aspect, soil, and the particular spring. Built for Western North Carolina; other regions can be added as data files. <a href="https://github.com/spskelly/wnc-bloom">Source on GitHub</a>.</footer>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
