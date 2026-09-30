@@ -1,0 +1,10 @@
+{
+  "name": "wnc-bloom",
+  "private": true,
+  "type": "module",
+  "description": "spring bloom succession planner for western north carolina, static site on github pages",
+  "scripts": {
+    "check": "node tools/check-data.mjs",
+    "serve": "python3 -m http.server 8080"
+  }
+}
